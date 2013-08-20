@@ -1,0 +1,6 @@
+target
+mitza.jni4net
+jni4net.ncrunchsolution.user
+*.ncrunchsolution
+*.suo
+*.user

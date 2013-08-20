@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>../../tools/keys/jni4net.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>jni4net.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -60,8 +60,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="selvin.exportdllattribute-0.2.6.0, Version=0.0.0.0, Culture=neutral, PublicKeyToken=57baad0f7b3885b0, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="selvin.exportdllattribute-0.2.6.0">
       <HintPath>..\..\tools\lib\selvin.exportdllattribute-0.2.6.0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -91,6 +90,10 @@
     </Compile>
     <Compile Include="AssemblyInf.cs" />
     <Compile Include="BridgeExport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jni4net.snk" />
+    <None Include="TempKey.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
