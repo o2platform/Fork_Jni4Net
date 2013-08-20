@@ -50,7 +50,9 @@ namespace net.sf.jni4net.jni
             }
             IntPtr env;
             JNIResult result;
-            if (args.HasValue)
+
+            //DC: using Patch_IgnoreArgsInAttach to handle the prob with attaching existing VMs
+            if (BridgeSetup.Patch_IgnoreArgsInAttach == false && args.HasValue)   
             {
                 JavaVMInitArgs initArgs = args.Value;
                 result = attachCurrentThread.Invoke(native, out env, &initArgs);

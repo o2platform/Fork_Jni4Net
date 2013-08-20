@@ -9,11 +9,15 @@ namespace net.sf.jni4net
     [Serializable]
     public class BridgeSetup
     {
+        //DC: to handle the prob with attaching existing VMs
+        public static bool Patch_IgnoreArgsInAttach { get; set; }  
+
+
         private bool bindNative;
         private bool bindStatic;
         private readonly List<string> jvmOptions;
-        private readonly List<string> jvmCLassPath;
-
+        private readonly List<string> jvmCLassPath;        
+            
         public bool BindCLRTypes { get; set; }
         public bool Verbose { get; set; }
         public bool VeryVerbose { get; set; }
